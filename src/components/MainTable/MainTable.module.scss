@@ -1,0 +1,15 @@
+@import "../../style/variables";
+
+.table {
+  padding: 0 10px;
+  width: 1660px;
+  th {
+    text-align: left;
+  }
+  th:first-child {
+    max-width: 6%s;
+  }
+  th:second-child {
+    width: 45%;
+  }
+}

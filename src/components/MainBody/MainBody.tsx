@@ -1,5 +1,11 @@
+import MainTable from "../MainTable";
+
 function MainBody(): JSX.Element {
-  return <div>Body</div>;
+  return (
+    <div>
+      <MainTable />
+    </div>
+  );
 }
 
 export default MainBody;
