@@ -1,0 +1,49 @@
+@import "../../style/variables";
+
+.header {
+  height: 100%;
+  display: flex;
+  color: $text-color-dis;
+  align-items: center;
+  ul {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    list-style: none;
+    height: 100%;
+    box-sizing: border-box;
+
+    img {
+      cursor: pointer;
+      scale: 1;
+      transition: all 0.1s ease-in;
+    }
+
+    img:hover {
+      scale: 1.2;
+    }
+  }
+}
+
+.item {
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.item:hover {
+  cursor: pointer;
+  color: $text-color;
+  border-bottom: solid 2px #fff;
+}
+
+.item.active {
+  color: $text-color;
+  border-bottom: solid 2px #fff;
+}

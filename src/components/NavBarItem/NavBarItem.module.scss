@@ -1,0 +1,32 @@
+@import "../../style/variables";
+
+.menuItem {
+  display: flex;
+  padding: 0 22px;
+  height: 32px;
+  list-style: none;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  img {
+    scale: 0.75;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    width: 175px;
+
+    p {
+      margin-left: 17px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  transition: all 0.1s ease-out;
+}
+
+.menuItem:hover {
+  background: $bg-hover;
+}

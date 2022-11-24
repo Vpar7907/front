@@ -1,0 +1,25 @@
+@import "../../style/variables";
+
+.navTitle {
+  background: $bg-second;
+  border-bottom: $bg-border solid 1px;
+  border-top: $bg-border solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 13px;
+  cursor: pointer;
+  color: $text-color-dis;
+  height: 45px;
+
+  div {
+    h3 {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 10px;
+      font-weight: 400;
+    }
+  }
+}

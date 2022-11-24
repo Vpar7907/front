@@ -1,0 +1,28 @@
+@import "../../style/variables";
+
+.mainTitle {
+  background: $bg-second;
+  border-bottom: $bg-border solid 1px;
+  border-top: $bg-border solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: $text-color;
+  height: 45px;
+
+  div {
+    border-right: $bg-border solid 1px;
+    padding: 0 15px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
