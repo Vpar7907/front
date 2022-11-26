@@ -1,3 +1,4 @@
+import MainTableRow from "../MainTableRow";
 import style from "./MainTable.module.scss";
 
 function MainTable(): JSX.Element {
@@ -11,7 +12,9 @@ function MainTable(): JSX.Element {
         <th className={style.th}>Накладные расходы</th>
         <th className={style.th}>Сметная прибыль</th>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <MainTableRow/>
+      </tbody>
     </table>
   );
 }

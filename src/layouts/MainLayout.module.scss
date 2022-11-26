@@ -9,7 +9,9 @@
   grid-template-areas:
     "header header"
     "nav main";
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  max-width: 100vw;
 }
 
 .main {
