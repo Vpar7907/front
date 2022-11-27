@@ -1,5 +1,4 @@
-
-export interface MainTableRowProps {
+export interface MainTableRow {
   equipmentCosts: number;
   estimatedProfit: number;
   id: number;
@@ -12,7 +11,21 @@ export interface MainTableRowProps {
   salary: number;
   supportCosts: number;
   total: number;
-  child:  MainTableRowProps
-  }
+}
 
-export type MainTableRowChildProps = MainTableRowProps[] | [null]
+export interface MainTableRowProps extends MainTableRow {
+  id: number;
+  level?: number;
+  amountChild?: number;
+  index?: number;
+  child: MainTableRowProps[] | [];
+}
+
+export interface MainTableRowState {
+  rowName: string;
+  salary: number;
+  equipmentCosts: number;
+  overheads: number;
+  estimatedProfit: number;
+  amountChild: number;
+}

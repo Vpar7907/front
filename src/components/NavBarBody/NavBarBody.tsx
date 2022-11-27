@@ -6,7 +6,7 @@ function NavBarBody(): JSX.Element {
   return (
     <ul className={style.menu}>
       {entityData.map((el) => (
-        <NavBarItem entity={el} />
+        <NavBarItem entity={el} key={el.id} />
       ))}
     </ul>
   );

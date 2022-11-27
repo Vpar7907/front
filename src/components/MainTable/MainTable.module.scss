@@ -3,21 +3,41 @@
 .table {
   color: $text-color-dis;
   font-weight: 400;
-  padding: 0 10px;
-  width: 100%;
+  width: calc(100% - 22px);
   font-size: 14px;
+  margin: 0 11px;
 
-  tr{
-    color: $text-color;
+  border-collapse: collapse;
+
+  thead {
+    height: 42px;
   }
-  
+  tr > th {
+    color: $text-color-dis;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  th,
+  td {
+    padding-left: 12px;
+  }
+  tbody {
+    tr {
+      color: $text-color;
+      height: 60px;
+      font-weight: 400;
+    }
+  }
 
   th {
     text-align: left;
+    font-weight: 400;
+    height: 42px;
   }
   th:nth-child(1),
   td:nth-child(1) {
-    max-width: 7%;
+    width: 7%;
   }
   th:nth-child(2),
   td:nth-child(2) {
@@ -28,13 +48,13 @@
   th:nth-child(4),
   td:nth-child(4),
   th:nth-child(5),
-  td:nth-child(5), 
+  td:nth-child(5),
   th:nth-child(6),
   td:nth-child(6) {
     width: 12%;
   }
 
-  tr{
-    border-top: solid $bg-border 1px;
+  td {
+    border-top: 1px solid #414144;
   }
 }

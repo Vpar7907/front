@@ -1,0 +1,76 @@
+@import "../../style/variables";
+
+$width-cost: 12px;
+
+.file {
+  z-index: 1000;
+  img {
+    cursor: pointer;
+    transition: all ease-in 0.1s;
+
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}
+
+.rootFile {
+  img {
+    transition: all ease-in 0.1s;
+    cursor: pointer;
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}
+
+.file:before {
+  content: "";
+  border-left: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
+  position: absolute;
+  left: -$width-cost;
+  bottom: 50%;
+  width: $width-cost;
+}
+
+.after {
+  border-left: 1px solid #c6c6c6;
+  left: calc($file-width/2 - 2px);
+  position: absolute;
+  top: calc($file-height);
+}
+
+.input {
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  outline: none;
+  width: 100%;
+  height: inherit;
+  border: none;
+}
+
+.input:focus {
+  color: $text-color-dis;
+  border: 1px #414144 solid;
+  border-radius: 6px;
+  padding-left: 10px;
+  height: 36px;
+}
+
+.input.focus {
+  color: $text-color-dis;
+  border: 1px #414144 solid;
+  border-radius: 6px;
+  padding-left: 10px;
+  height: 36px;
+}
+
+.row {
+  min-width: 50px;
+  cursor: pointer;
+  user-select: none;
+}
