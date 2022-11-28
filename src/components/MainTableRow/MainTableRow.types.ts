@@ -18,6 +18,7 @@ export interface MainTableRowProps extends MainTableRow {
   level?: number;
   amountChild?: number;
   index?: number;
+  parentId?: number;
   child: MainTableRowProps[] | [];
 }
 

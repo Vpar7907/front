@@ -5,9 +5,8 @@ import MainTableRowPanel from "../MainTableRowPanel";
 import first_folder from "../../images/first_folder.svg";
 import second_folder from "../../images/second_folder.svg";
 import document from "../../images/document.svg";
-import { useState, useContext } from "react";
-import { observer } from "mobx-react-lite";
-import { Context } from "../..";
+import { useState } from "react";
+import { useAppSelector } from "../../hooks/redux";
 
 function MainTableRow({
   amountChild,
@@ -16,8 +15,6 @@ function MainTableRow({
   id,
   ...props
 }: MainTableRowProps | any) {
-  const { store } = useContext(Context);
-
   const [openPanel, setOpenPanel] = useState<boolean>(false);
   const [focus, setFocus] = useState<boolean>(false);
   const [rowName, setRowName] = useState(props.rowName);
@@ -26,50 +23,40 @@ function MainTableRow({
   const [overheads, setOverheads] = useState(props.overheads);
   const [estimatedProfit, setEstimatedProfit] = useState(props.estimatedProfit);
 
+  const fileStructure = useAppSelector((state) => state.rows.fileStructure);
+
   function onUpdateHandler() {
-    store.updateRow(
-      1,
-      id,
-      equipmentCosts,
-      estimatedProfit,
-      overheads,
-      rowName,
-      salary
-    );
+    // store.updateRow(
+    //   1,
+    //   id,
+    //   equipmentCosts,
+    //   estimatedProfit,
+    //   overheads,
+    //   rowName,
+    //   salary
+    // );
   }
 
   function onDbClick(e: React.MouseEvent) {
-    if (e.detail === 2 && !store.isEditing) {
-      store.setEditing(true);
-      setFocus(true);
-    }
+    // if (e.detail === 2 && !store.isEditing) {
+    //   store.setEditing(true);
+    //   setFocus(true);
+    // }
   }
 
   function onKeyboardEnter(e: React.KeyboardEvent) {
-    if (e.key === "Enter") {
-      setFocus(false);
-      onUpdateHandler();
-      store.setEditing(false);
+    // if (e.key === "Enter") {
+    //   setFocus(false);
+    //   onUpdateHandler();
+    //   store.setEditing(false);
+    // }
+  }
+
+  function calcConnectLine(fileStructureArray: number[]) {
+    if (level === 0) {
+      return fileStructureArray.lastIndexOf(2);
     }
-  }
-
-  let indexFrom = store.fileStructureArray.indexOf(level + 1, index);
-
-  let lengthConnectLine = 0;
-
-  if (indexFrom !== -1) {
-    lengthConnectLine =
-      store.fileStructureArray.lastIndexOf(level + 1, indexFrom) - index;
-  }
-
-  let indexTo = store.fileStructureArray.lastIndexOf(level + 1);
-
-  if (indexTo !== -1) {
-    lengthConnectLine = indexTo - index;
-  }
-
-  if (level !== 0) {
-    lengthConnectLine = amountChild;
+    return amountChild;
   }
 
   return (
@@ -81,7 +68,7 @@ function MainTableRow({
         >
           <div
             className={style.after}
-            style={{ height: lengthConnectLine * 60 - 8 }}
+            style={{ height: calcConnectLine(fileStructure) * 60 - 8 }}
           ></div>
           <div onMouseLeave={() => setOpenPanel(false)}>
             {openPanel ? (
@@ -89,7 +76,7 @@ function MainTableRow({
             ) : (
               <img
                 onMouseEnter={() => {
-                  if (!store.isEditing) setOpenPanel(true);
+                  setOpenPanel(true);
                 }}
                 src={
                   level === 0
@@ -180,4 +167,4 @@ function MainTableRow({
   );
 }
 
-export default observer(MainTableRow);
+export default MainTableRow;

@@ -4,19 +4,19 @@ import second_folder from "../../images/second_folder.svg";
 import document from "../../images/document.svg";
 import delete_icon from "../../images/delete.svg";
 import { MainTableRowPanelProps } from "./MainTableRowPanel.types";
-import { observer } from "mobx-react-lite";
-import { Context } from "../..";
-import { useContext } from "react";
+
+import { useAppDispatch } from "../../hooks/redux";
+import { deleteRows, addRows } from "../../store/slices/rows.slice";
 
 function MainTableRowPanel({ id, level }: MainTableRowPanelProps) {
-  const { store } = useContext(Context);
+  const dispatch = useAppDispatch();
 
   function onCreateHandler() {
-    store.createRowInEntity(1, id);
+    dispatch(addRows(id));
   }
 
   function onDeleteHandler() {
-    store.deleteRow(1, id);
+    dispatch(deleteRows(id));
   }
 
   if (level === 0) {
@@ -59,4 +59,4 @@ function MainTableRowPanel({ id, level }: MainTableRowPanelProps) {
   return <></>;
 }
 
-export default observer(MainTableRowPanel);
+export default MainTableRowPanel;
