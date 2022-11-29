@@ -14,6 +14,7 @@ const initialState: IRowDataInitial = {
   rows: [],
   fileStructure: [],
   error: "",
+  editingRow: null,
 };
 
 const eID = 1;
