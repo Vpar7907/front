@@ -110,7 +110,7 @@ return state.rows
 
     builder.addCase(addRows.fulfilled, (state, action: PayloadAction<any>) => {
       const parentInd = state.rows.findIndex(
-        (e) => action.payload.parentId === e.id
+        (e) => action.payload.parentInd === e.id
       );
       const parentLevel = state.rows[parentInd].level;
       const addingRow = {
