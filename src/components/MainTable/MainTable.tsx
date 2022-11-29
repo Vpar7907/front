@@ -43,8 +43,8 @@ function MainTable(): JSX.Element {
         </tr>
       </thead>
       <tbody>
-        {rows.loading && <tr><td>Loading...</td></tr>}
-  {rows.error !== "" && <tr><td>{rows.error}</td></tr>}
+        //{rows.loading && <tr><td>Loading...</td></tr>}
+ // {rows.error !== "" && <tr><td>{rows.error}</td></tr>}
         {composeRowArray(
   {
     "id": 3560,
