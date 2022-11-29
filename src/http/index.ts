@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_URL = "185.244.172.108:8081";
+export const API_URL = "http://185.244.172.108:8081";
 
 export const eID = 1;
 
