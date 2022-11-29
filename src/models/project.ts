@@ -18,6 +18,7 @@ export interface IRowDataInitial {
   rows: MainTableRowProps[];
   fileStructure: number[];
   error: string;
+  editRow: MainTableRowProps | null;
 }
 
 interface IChanged {
