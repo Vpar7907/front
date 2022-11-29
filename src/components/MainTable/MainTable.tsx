@@ -45,7 +45,176 @@ function MainTable(): JSX.Element {
       <tbody>
         {rows.loading && <tr><td>Loading...</td></tr>}
   {rows.error !== "" && <tr><td>{rows.error}</td></tr>}
-        {rows.rows.flatMap((elements, i) => (
+        {composeRowArray(
+  {
+    "id": 3560,
+    "rowName": "Pochti Zakonchil 0_OP",
+    "total": 5,
+    "salary": 5,
+    "mimExploitation": 0,
+    "machineOperatorSalary": 0,
+    "materials": 0,
+    "mainCosts": 0,
+    "supportCosts": 0,
+    "equipmentCosts": 2,
+    "overheads": 3,
+    "estimatedProfit": 4,
+    "child": [
+      {
+        "id": 22377,
+        "rowName": "new",
+        "total": 1,
+        "salary": 0,
+        "mimExploitation": 0,
+        "machineOperatorSalary": 0,
+        "materials": 0,
+        "mainCosts": 0,
+        "supportCosts": 0,
+        "equipmentCosts": 0,
+        "overheads": 0,
+        "estimatedProfit": 0,
+        "child": [
+          {
+            "id": 22384,
+            "rowName": "new",
+            "total": 0,
+            "salary": 0,
+            "mimExploitation": 0,
+            "machineOperatorSalary": 0,
+            "materials": 0,
+            "mainCosts": 0,
+            "supportCosts": 0,
+            "equipmentCosts": 0,
+            "overheads": 0,
+            "estimatedProfit": 0,
+            "child": []
+          }
+        ]
+      },
+      {
+        "id": 22378,
+        "rowName": "new",
+        "total": 4,
+        "salary": 0,
+        "mimExploitation": 0,
+        "machineOperatorSalary": 0,
+        "materials": 0,
+        "mainCosts": 0,
+        "supportCosts": 0,
+        "equipmentCosts": 0,
+        "overheads": 0,
+        "estimatedProfit": 0,
+        "child": [
+          {
+            "id": 22388,
+            "rowName": "new",
+            "total": 0,
+            "salary": 0,
+            "mimExploitation": 0,
+            "machineOperatorSalary": 0,
+            "materials": 0,
+            "mainCosts": 0,
+            "supportCosts": 0,
+            "equipmentCosts": 0,
+            "overheads": 0,
+            "estimatedProfit": 0,
+            "child": []
+          },
+          {
+            "id": 22389,
+            "rowName": "new",
+            "total": 0,
+            "salary": 0,
+            "mimExploitation": 0,
+            "machineOperatorSalary": 0,
+            "materials": 0,
+            "mainCosts": 0,
+            "supportCosts": 0,
+            "equipmentCosts": 0,
+            "overheads": 0,
+            "estimatedProfit": 0,
+            "child": []
+          },
+          {
+            "id": 22390,
+            "rowName": "new",
+            "total": 0,
+            "salary": 0,
+            "mimExploitation": 0,
+            "machineOperatorSalary": 0,
+            "materials": 0,
+            "mainCosts": 0,
+            "supportCosts": 0,
+            "equipmentCosts": 0,
+            "overheads": 0,
+            "estimatedProfit": 0,
+            "child": []
+          },
+          {
+            "id": 22391,
+            "rowName": "new",
+            "total": 0,
+            "salary": 0,
+            "mimExploitation": 0,
+            "machineOperatorSalary": 0,
+            "materials": 0,
+            "mainCosts": 0,
+            "supportCosts": 0,
+            "equipmentCosts": 0,
+            "overheads": 0,
+            "estimatedProfit": 0,
+            "child": []
+          }
+        ]
+      },
+      {
+        "id": 22379,
+        "rowName": "new",
+        "total": 0,
+        "salary": 0,
+        "mimExploitation": 0,
+        "machineOperatorSalary": 0,
+        "materials": 0,
+        "mainCosts": 0,
+        "supportCosts": 0,
+        "equipmentCosts": 0,
+        "overheads": 0,
+        "estimatedProfit": 0,
+        "child": []
+      },
+      {
+        "id": 22380,
+        "rowName": "new",
+        "total": 0,
+        "salary": 0,
+        "mimExploitation": 0,
+        "machineOperatorSalary": 0,
+        "materials": 0,
+        "mainCosts": 0,
+        "supportCosts": 0,
+        "equipmentCosts": 0,
+        "overheads": 0,
+        "estimatedProfit": 0,
+        "child": []
+      },
+      {
+        "id": 22381,
+        "rowName": "new",
+        "total": 0,
+        "salary": 0,
+        "mimExploitation": 0,
+        "machineOperatorSalary": 0,
+        "materials": 0,
+        "mainCosts": 0,
+        "supportCosts": 0,
+        "equipmentCosts": 0,
+        "overheads": 0,
+        "estimatedProfit": 0,
+        "child": []
+      }
+    ]
+  }
+).flatMap((elements, i) => (
           <MainTableRow {...elements} key={elements.id} index={i} />
         ))}
       </tbody>
