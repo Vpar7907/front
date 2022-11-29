@@ -14,6 +14,7 @@ function MainTable(): JSX.Element {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchRows());
+    console.log(rows);
   }, []);
   console.log(rows);
 
