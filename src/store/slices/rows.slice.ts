@@ -70,7 +70,12 @@ export const deleteRows = createAsyncThunk("row/delete", (rID: number) => {
 const rowsSlice = createSlice({
   name: "rows",
   initialState,
-  reducers: {},
+  reducers: {
+   addChild(id: number, child: MainTableRowProps){
+     state.rows[id].child.push(child)
+return state.rows
+   }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchRows.pending, (state) => {
       state.loading = true;
@@ -112,7 +117,7 @@ const rowsSlice = createSlice({
         ...action.payload.current,
         level: (parentLevel as number) + 1,
       }
-      state.rows[parentInd].child.push(addingRow as MainTableRowProps)
+      this.reducers.addChild(parentId, addingRow)
       state.rows.splice(parentInd + 1, 0, addingRow);
     });
   },
