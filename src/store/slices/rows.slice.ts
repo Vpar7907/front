@@ -108,10 +108,12 @@ const rowsSlice = createSlice({
         (e) => action.payload.parentId === e.id
       );
       const parentLevel = state.rows[parentInd].level;
-      state.rows.splice(parentInd + 1, 0, {
+      const addingRow = {
         ...action.payload.current,
         level: (parentLevel as number) + 1,
-      });
+      }
+      state.rows[parentInd].child.push(addingRow)
+      state.rows.splice(parentInd + 1, 0, addingRow);
     });
   },
 });
