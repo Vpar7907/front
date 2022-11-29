@@ -12,11 +12,11 @@ import { fetchRows } from "../../store/slices/rows.slice";
 function MainTable(): JSX.Element {
   const rows = useAppSelector((state) => state.rows);
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(fetchRows());
-    console.log(rows);
-  }, []);
-  console.log(rows);
+  //useEffect(() => {
+    //dispatch(fetchRows());
+    //console.log(rows);
+  //}, []);
+  //console.log(rows);
 
   // async function onGetData() {
   //   await store.getData(eID);
