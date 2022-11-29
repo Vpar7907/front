@@ -21,7 +21,9 @@ const eID = 1;
 
 export const fetchRows = createAsyncThunk("row/list", () => {
   return axios
-    .get(`${API_URL}/v1/outlay-rows/entity/1/row/list`)
+    .get(`${API_URL}/v1/outlay-rows/entity/1/row/list`, {
+withCredentials: true,
+})
     .then((response) =>
       response.data.flatMap((e: MainTableRowProps) => composeRowArray(e))
     );
