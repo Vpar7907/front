@@ -43,7 +43,8 @@ function MainTable(): JSX.Element {
         </tr>
       </thead>
       <tbody>
-        {rows.loading && <tr>Loading...</tr>}
+        {rows.loading && <tr><td>Loading...</td></tr>}
+  {rows.error !== "" && <tr><td>{rows.error}</td></tr>}
         {rows.rows.flatMap((elements, i) => (
           <MainTableRow {...elements} key={elements.id} index={i} />
         ))}
