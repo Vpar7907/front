@@ -112,7 +112,7 @@ const rowsSlice = createSlice({
         ...action.payload.current,
         level: (parentLevel as number) + 1,
       }
-      state.rows[parentInd].child.push(addingRow)
+      state.rows[parentInd].child.push(addingRow as MainTableRowProps)
       state.rows.splice(parentInd + 1, 0, addingRow);
     });
   },
