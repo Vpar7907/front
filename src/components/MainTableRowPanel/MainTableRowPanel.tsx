@@ -8,11 +8,19 @@ import { MainTableRowPanelProps } from "./MainTableRowPanel.types";
 import { useAppDispatch } from "../../hooks/redux";
 import { deleteRows, addRows } from "../../store/slices/rows.slice";
 
-function MainTableRowPanel({ id, level }: MainTableRowPanelProps) {
+function MainTableRowPanel({ id, level, parentId }: MainTableRowPanelProps) {
   const dispatch = useAppDispatch();
 
   function onCreateHandler() {
     dispatch(addRows(id));
+  }
+
+  function onCreateHandlerFirst() {
+    dispatch(addRows(null));
+  }
+
+  function onCreateHandlerThisLevel() {
+    dispatch(addRows(parentId));
   }
 
   function onDeleteHandler() {
@@ -22,7 +30,7 @@ function MainTableRowPanel({ id, level }: MainTableRowPanelProps) {
   if (level === 0) {
     return (
       <div className={style.panel}>
-        <img src={first_folder} alt="file" />
+        <img src={first_folder} alt="file" onClick={onCreateHandlerFirst} />
 
         <img src={second_folder} alt="file" onClick={onCreateHandler} />
 
@@ -36,7 +44,11 @@ function MainTableRowPanel({ id, level }: MainTableRowPanelProps) {
   if (level === 1) {
     return (
       <div className={style.panel}>
-        <img src={second_folder} alt="file" />
+        <img
+          src={second_folder}
+          alt="file"
+          onClick={onCreateHandlerThisLevel}
+        />
 
         <img src={document} onClick={onCreateHandler} alt="file" />
 
@@ -48,7 +60,7 @@ function MainTableRowPanel({ id, level }: MainTableRowPanelProps) {
   if (level === 2) {
     return (
       <div className={style.panel}>
-        <img src={document} alt="file" />
+        <img src={document} alt="file" onClick={onCreateHandlerThisLevel} />
 
         <img src={delete_icon} alt="file" onClick={onDeleteHandler} />
         <div className={style.bgPanel} style={{ width: (4 - level) * 26 }} />

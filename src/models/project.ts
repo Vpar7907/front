@@ -15,10 +15,10 @@ export interface IRowData extends MainTableRow {
 
 export interface IRowDataInitial {
   loading: boolean;
-  rows: MainTableRowProps[];
-  fileStructure: number[];
+  rows: MainTableRow[];
   error: string;
-  editingRow: MainTableRowProps | null;
+  editingRow: IEditingRow | null;
+  isEdit: null | number;
 }
 
 interface IChanged {
@@ -34,6 +34,19 @@ interface IChanged {
   salary: number;
   supportCosts: number;
   total: number;
+}
+
+export interface IEditingRow {
+  equipmentCosts: number;
+  estimatedProfit: number;
+  machineOperatorSalary: number;
+  mainCosts: number;
+  materials: number;
+  mimExploitation: number;
+  overheads: number;
+  rowName: string;
+  salary: number;
+  supportCosts: number;
 }
 
 interface ICurrent {
@@ -59,4 +72,9 @@ export interface IRowResponse {
 export interface IRowResponseWithParentID {
   response: IRowResponse;
   parentId: number;
+}
+
+export interface IRowAdd {
+  parentId: number | null;
+  response: IRowResponse;
 }

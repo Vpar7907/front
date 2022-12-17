@@ -1,12 +1,12 @@
 import { eID } from "../../http";
-import { MainTableRowProps } from "../MainTableRow/MainTableRow.types";
+import { MainTableRow } from "../MainTableRow/MainTableRow.types";
 
 export function composeRowArray(
-  rowData: MainTableRowProps | undefined,
-  rowArray: MainTableRowProps[] = [],
+  rowData: MainTableRow | undefined,
+  rowArray: MainTableRow[] = [],
   level: number = 0,
   parentId: number = eID
-): MainTableRowProps[] {
+): MainTableRow[] {
   if (!rowData) return [];
 
   rowArray.push({

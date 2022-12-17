@@ -11,15 +11,20 @@ export interface MainTableRow {
   salary: number;
   supportCosts: number;
   total: number;
+  parentId: number | null;
+  amountChild?: number;
+  level: number;
+  child: MainTableRow[] | [];
+}
+
+export interface RowsStructure {
+  id: number;
+  level: number;
 }
 
 export interface MainTableRowProps extends MainTableRow {
   id: number;
-  level?: number;
-  amountChild?: number;
-  index?: number;
-  parentId?: number;
-  child: MainTableRowProps[] | [];
+  index: number;
 }
 
 export interface MainTableRowState {
